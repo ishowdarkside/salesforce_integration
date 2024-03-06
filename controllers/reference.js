@@ -16,11 +16,11 @@ const referenceNumbers = require(path.join(
 exports.checkReference = catchAsync(async (req, res, next) => {
   const { input } = req.body;
 
-  if (referenceNumbers.some((e) => e === input.toUpperCase()))
+  if (!referenceNumbers.some((e) => e === input.toUpperCase()))
     return next(new AppError(401, "Invalid code"));
 
   res.status(200).json({
     status: "success",
-    message: "Code valid",
+    message: "valid code",
   });
 });
