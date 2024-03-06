@@ -20,6 +20,7 @@ exports.checkReference = catchAsync(async (req, res, next) => {
     return next(new AppError(401, "Invalid code"));
 
   res.status(200).json({
+    test: "TOO",
     status: "success",
     message: "valid code",
   });
