@@ -19,8 +19,6 @@ exports.checkReference = catchAsync(async (req, res, next) => {
   if (!referenceNumbers.some((e) => e === input.toUpperCase()))
     return next(new AppError(401, "Invalid code"));
 
-  res.header("Access-Control-Allow-Origin", "*");
-
   res.status(200).json({
     test: "TOO",
     status: "success",

@@ -7,7 +7,11 @@ const salesforceRouter = require("./routes/salesforce");
 const errorController = require("./controllers/errorController");
 dotenv.config({ path: "./.env" });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://www.myoneloan.com",
+  })
+);
 app.options("/reference-number/check-reference", cors());
 app.use(express.json());
 app.use("/reference-number", referenceRouter);
