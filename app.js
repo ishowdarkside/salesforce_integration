@@ -7,7 +7,11 @@ const errorController = require("./controllers/errorController");
 dotenv.config({ path: "./.env" });
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: true, // Allow requests from all origins
+  })
+);
 app.use(express.json());
 app.use("/reference-number", referenceRouter);
 app.use("/salesforce", salesforceRouter);
