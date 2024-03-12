@@ -9,7 +9,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: true, // Allow requests from all origins
+    origin: "https://oneloan.webflow.io", // Specify the allowed origin
   })
 );
 app.use(express.json());
