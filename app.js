@@ -5,9 +5,9 @@ const referenceRouter = require("./routes/reference");
 const salesforceRouter = require("./routes/salesforce");
 const errorController = require("./controllers/errorController");
 dotenv.config({ path: "./.env" });
+const cors = require("cors");
 
-console.log("remove message");
-
+app.use(cors());
 app.use(express.json());
 app.use("/reference-number", referenceRouter);
 app.use("/salesforce", salesforceRouter);
