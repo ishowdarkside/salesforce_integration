@@ -8,7 +8,7 @@ dotenv.config({ path: "./.env" });
 const cors = require("cors");
 
 app.use(cors());
-console.log("IMA LI ME?");
+app.options("/reference-number/check-reference", cors());
 app.use(express.json());
 app.use("/reference-number", referenceRouter);
 app.use("/salesforce", salesforceRouter);
