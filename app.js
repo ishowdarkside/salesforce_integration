@@ -7,11 +7,8 @@ const errorController = require("./controllers/errorController");
 dotenv.config({ path: "./.env" });
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "https://oneloan.webflow.io", // Specify the allowed origin
-  })
-);
+app.use(cors());
+console.log("IMA LI ME?");
 app.use(express.json());
 app.use("/reference-number", referenceRouter);
 app.use("/salesforce", salesforceRouter);
