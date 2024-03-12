@@ -12,8 +12,8 @@ app.use(
     origin: "https://www.myoneloan.com",
   })
 );
-app.options("/reference-number/check-reference", cors());
 app.use(express.json());
+
 app.use("/reference-number", referenceRouter);
 app.use("/salesforce", salesforceRouter);
 app.use("*", (req, res, next) => {
