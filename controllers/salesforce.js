@@ -25,6 +25,7 @@ exports.postUser = catchAsync(async (req, res, next) => {
     phone,
     dateOfBirth,
     email,
+    reference,
   } = req.body;
 
   const response = await fetch(
@@ -47,7 +48,7 @@ exports.postUser = catchAsync(async (req, res, next) => {
         Phone: phone,
         DateOfBirth: dateOfBirth,
         Email: email,
-        LeadSourceId: "19285636",
+        ExternalLeadSource: reference,
       }),
     }
   );
